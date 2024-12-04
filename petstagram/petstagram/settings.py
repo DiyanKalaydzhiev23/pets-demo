@@ -28,8 +28,7 @@ SECRET_KEY = 'django-insecure-5hfl3*4yfz^8uqg&mj9w6t@hz14ef9rt4i3chuo2z76vd+52o^
 DEBUG = os.getenv('DEBUG', None)
 
 ALLOWED_HOSTS = [
-    "gator-causal-monthly.ngrok-free.app",
-    "localhost",
+    os.getenv('ALLOWED_HOST', "localhost")
 ]
 
 CSRF_TRUSTED_ORIGINS = [
