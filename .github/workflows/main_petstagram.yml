@@ -29,13 +29,14 @@ jobs:
       - name: Zip artifact for deployment
         run: |
           cd petstagram
-          zip -r ../release.zip ./*
+          zip -r release.zip ./*
+        working-directory: ${{ github.workspace }}
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: ../release.zip
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
